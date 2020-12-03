@@ -10,10 +10,10 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('home')
 })
 
 
-app.listen(() => {
+app.listen(port, () => {
   console.log(`Express app is listening on port ${port}.`)
 })
