@@ -8,7 +8,6 @@ function generateShortenedURL() {
   for (let i = 0; i < 5; i++) {
     shortLink += collection[Math.floor(Math.random() * collection.length)]
   }
-  console.log('shortLink: ' + shortLink)
   return shortLink
 }
 
