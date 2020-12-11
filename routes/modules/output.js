@@ -7,7 +7,7 @@ router.use(bodyParser.urlencoded({ extended: true }))
 // 輸入網址，按下shorten後
 router.post('/output', (req, res) => {
   let shortened = '' // 將縮短的網址部分設為變數shortened
-  let link = req.body.website // 儲存 user 想進入的頁面
+  const link = req.body.website // 儲存 user 想進入的頁面
   URL.find({ link }) // 先看看資料庫內是否已有相對應的短網址
     .lean()
     .then(links => {
@@ -26,6 +26,17 @@ router.post('/output', (req, res) => {
       res.render('output', { link, shortened })   // 點擊連結可導向  user 想進入的頁面
     }).catch(error => console.log(error))
 
+})
+
+router.get(`/:shortened`, (req, res) => {
+  const url = req.params.shortened
+  console.log(url)
+  URL.find({ shortenedURL: url })
+    .lean()
+    .then(urls => {
+      const website = urls[0].link
+      res.redirect(`${website}`)
+    })
 })
 
 
