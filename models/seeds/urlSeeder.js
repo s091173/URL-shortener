@@ -1,9 +1,10 @@
-const URL = require('../url')
 const db = require('../../config/mongoose')
+const URL = require('../url')
+
 db.once('open', () => {
   console.log('db connected!')
   URL.create({
-    link: 'https://www.google.com/',
+    link: 'https://www.google.com',
     shortenedURL: 'B4fUv'
   }, {
     link: 'https://www.youtube.com',

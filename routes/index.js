@@ -9,6 +9,6 @@ const output = require('./modules/output')
 router.use('/shorten', output)
 
 const shortenedURL = require('./modules/shortenedURL')
-router.use(`${myWebsite}`, shortenedURL)
+router.use('/shortened', shortenedURL)
 
 module.exports = router
