@@ -2,12 +2,10 @@ const mongoose = require('mongoose') // 連到資料庫
 const Schema = mongoose.Schema    //使用mongoose 提供的 schema 模組
 const urlSchema = new Schema({ // 建立資料內容的屬性
   link: {
-    type: String,
-    required: true
+    type: String
   },
   shortenedURL: {
-    type: String,
-    required: true
+    type: String
   }
 })
 
