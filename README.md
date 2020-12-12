@@ -1,5 +1,5 @@
 # URL-shortener
-to track your every cent
+將想進入的網址貼入，可得一個替代的短網址
 
 ![Image](https://raw.githubusercontent.com/ywcwy/URL-shortener/master/URL.png)
 
