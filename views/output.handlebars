@@ -1,7 +1,20 @@
 <main class="text-center">
-  <h1 class="mt-5">URL Shortener</h1>
-  <a href="/"><i class="fas fa-link fa-7x mt-5"></i></a>
+  <h1 class="mt-5 title">URL Shortener</h1>
+  <i class="fas fa-link fa-7x mt-5"></i>
   <h3 class="mt-5">SUCCESS!</h3>
   <h4>Please use this link:</h4>
-  <a href="{{{link}}}">https://peaceful-taiga-20007.herokuapp.com/shorten/{{shortened}}</a>
+  <!-- Target -->
+  <a href="{{{link}}}" id="link">https://peaceful-taiga-20007.herokuapp.com/shorten/{{shortened}}</a>
+  {{!-- Trigger --}}
+  <button type="button" id="btn" data-clipboard-target="#link" class="btn btn-secondary ml-3">Copy</button>
+  <div><button type="button" class="btn btn-light mt-5"><a href="/">Back</a></button></div>
 </main>
+<!-- clipboard.js -->
+<script src="dist/clipboard.min.js"></script>
+<script>const clipboard = new ClipboardJS('#btn') // 藉由DOM選擇器建立物件實例，將 copy功能綁在 #btn上
+  clipboard.on('success', function (e) {  // copy 成功後
+    console.log(`Copy succeed!`)
+  })
+  clipboard.on('error', function (e) {  // copy 不成功
+    console.log(e)
+  })</script>

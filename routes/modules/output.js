@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const URL = require('../../models/url')
 const bodyParser = require('body-parser')
-const generateShortenedURL = require('../../URLshorten.js')
+const generateShortenedURL = require('../../public/javascript/URLshorten.js')
 router.use(bodyParser.urlencoded({ extended: true }))
 
 
